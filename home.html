@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Interativa</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      background-color: #000;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 80%;
+      max-width: 1000px;
+    }
+
+    /* Estilos dos botões do menu */
+    .menu-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+
+    .menu-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    /* Partículas */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Menu Principal</h1>
+  <div class="menu-container">
+    <div class="menu-item" onclick="openSite('https://www.youtube.com')">YouTube</div>
+    <div class="menu-item" onclick="openSite('https://www.google.com')">Google</div>
+    <div class="menu-item" onclick="openSite('https://www.xvideos.com')">Xvideos</div>
+    <div class="menu-item" onclick="openSite('https://www.pornhub.com')">Pornhub</div>
+    <div class="menu-item" onclick="openSite('https://vimeo.com')">Vimeo</div>
+    <div class="menu-item" onclick="openSite('https://www.netflix.com')">Netflix</div>
+    <div class="menu-item" onclick="openSite('https://www.amazon.com/primevideo')">Prime Video</div>
+    <div class="menu-item" onclick="openSite('https://play.hbomax.com')">HBO Max</div>
+    <div class="menu-item" onclick="openSite('https://pluto.tv')">Pluto TV</div>
+    <div class="menu-item" onclick="openSite('https://twit.tv')">Twit TV</div>
+    <div class="menu-item" onclick="openSite('https://www.linkedin.com')">LinkedIn</div>
+    <div class="menu-item" onclick="openSite('https://www.twitch.tv')">Twitch</div>
+    <div class="menu-item" onclick="openSite('https://www.erome.com')">Erome</div>
+  </div>
+  <footer>
+    <p>© 2024 Sua TV Interativa. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Partículas.js -->
+  <div id="particles-js"></div>
+
+  <!-- Inclusão da biblioteca de partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    // Função para abrir os sites
+    function openSite(url) {
+      window.location.href = url; // Abre o site na mesma janela.
+    }
+
+    // Configuração das partículas
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0.1
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 40,
+            "size_min": 0.1
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
